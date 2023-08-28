@@ -7,8 +7,8 @@ class Servo:
         self.s.freq(50)
     
     def angle(self, x):
-        #For custom angle of rotation 
-        y = ((320 / 9) * x) + 1800
+        #For custom angle of rotation ,note the angle should be given in degrees
+        y = ((320 / 9) * x) + 1800   #degrees to duty cycle convertion, 1800-->0 degree and 8200--> 180 degree
         y = round(y, 4)
         self.s.duty_u16(int(y))
 
